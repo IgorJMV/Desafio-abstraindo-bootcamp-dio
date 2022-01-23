@@ -6,6 +6,7 @@ import java.util.Arrays;
 import web.dio.domain.Bootcamp;
 import web.dio.domain.Content;
 import web.dio.domain.Course;
+import web.dio.domain.Dev;
 import web.dio.domain.Mentoring;
 
 public class Program {
@@ -17,7 +18,9 @@ public class Program {
 		Bootcamp bootcamp = new Bootcamp("GFT Start #3 Java", "Especialize-se em Java", LocalDate.now(), LocalDate.parse("30/01/2022", Bootcamp.df));
 		bootcamp.getContens().addAll(Arrays.asList(c1, c2));
 		
-		System.out.println(bootcamp.getContens());
+		Dev dev1 = new Dev("João", LocalDate.parse("15/02/2001", Dev.df));
+		
+		System.out.println(dev1);
 
 	}
 
