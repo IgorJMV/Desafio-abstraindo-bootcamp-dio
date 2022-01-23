@@ -25,7 +25,7 @@ public class Mentoring extends Content{
 	
 	@Override
 	public String toString() {
-		return super.toString() + "Data: " + df.format(date) + "\n";
+		return "-----------Mentoria-----------\n" + super.toString() + "Data: " + df.format(date) + "\n";
 	}
 
 }

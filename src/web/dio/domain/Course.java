@@ -22,7 +22,7 @@ public class Course extends Content{
 	
 	@Override
 	public String toString() {
-		return super.toString() + "Carga horária: " + workload + " minutos\n";
+		return "------------Curso-------------\n" + super.toString() + "Carga horária: " + workload + " minutos\n";
 	}
 
 }
