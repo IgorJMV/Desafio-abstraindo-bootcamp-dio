@@ -20,11 +20,15 @@ public class Dev {
 	
 	@Include
 	@Getter @Setter private String email;
-	@Getter @Setter(value = AccessLevel.PROTECTED) private Registry registry;
+			@Setter(value = AccessLevel.PROTECTED) private Registry registry;
 	
 	public Dev(String name, LocalDate birthday) {
 		this.name = name;
 		this.birthday = birthday;
+	}
+	
+	public Registry getRegistry() {
+		return registry;
 	}
 	
 	@Override

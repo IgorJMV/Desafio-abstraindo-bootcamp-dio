@@ -3,6 +3,7 @@ package web.dio.domain;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashSet;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Set;
 
@@ -47,9 +48,14 @@ public class Registry {
 	}
 	
 	public void updateProgress() {
-		Optional<Content> content = subscribedContents.stream().findFirst();
-		subscribedContents.remove(content.get());
-		completedContents.add(content.get());
+		try {
+			Optional<Content> content = subscribedContents.stream().findFirst();
+			subscribedContents.remove(content.get());
+			completedContents.add(content.get());
+		} catch (NoSuchElementException e) {
+			System.err.println("Bootcamp finalizado!");
+			dev.setRegistry(null);
+		}
 	}
 	
 	public Integer totalXP() {

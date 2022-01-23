@@ -30,6 +30,7 @@ public class Program {
 		
 		dev1.getRegistry().updateProgress();
 		dev1.getRegistry().updateProgress();
+		dev1.getRegistry().updateProgress();
 		System.out.println(dev1.getRegistry().totalXP());
 		System.out.println(dev1.getRegistry().getCompletedContents());
 
