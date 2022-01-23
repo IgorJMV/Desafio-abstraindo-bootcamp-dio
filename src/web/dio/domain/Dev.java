@@ -3,6 +3,7 @@ package web.dio.domain;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.EqualsAndHashCode.Include;
 import lombok.Getter;
@@ -19,6 +20,7 @@ public class Dev {
 	
 	@Include
 	@Getter @Setter private String email;
+	@Getter @Setter(value = AccessLevel.PROTECTED) private Registry registry;
 	
 	public Dev(String name, LocalDate birthday) {
 		this.name = name;
