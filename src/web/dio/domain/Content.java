@@ -1,11 +1,17 @@
 package web.dio.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode.Include;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class Content {
-	private String title;
-	private String description;
+	@Include
+	@Getter @Setter private String title;
+	@Getter @Setter private String description;
 	
 	public Content(String title, String description) {
 		super();
@@ -13,7 +19,7 @@ public abstract class Content {
 		this.description = description;
 	}
 	
-	public abstract void calculateXP();
+	public abstract Integer calculateXP();
 	
 	@Override
 	public String toString() {
