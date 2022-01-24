@@ -2,6 +2,7 @@ package web.dio;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import web.dio.domain.Bootcamp;
 import web.dio.domain.Content;
@@ -18,11 +19,11 @@ public class Program {
 		Content c3 = new Mentoring("Primeira Mentoria", "Aproveite a primeira mentoria do bootcamp para tirar suas dúvidas.", LocalDate.parse("28/01/2022", Mentoring.df));
 		
 		Bootcamp bootcamp = new Bootcamp("GFT Start #3 Java", "Especialize-se em Java", LocalDate.now(), LocalDate.parse("30/01/2022", Bootcamp.df));
-		bootcamp.getContens().addAll(Arrays.asList(c1, c2, c3));
+		bootcamp.getContents().addAll(Arrays.asList(c1, c2, c3));
 		
-		Dev dev1 = new Dev("João", LocalDate.parse("15/02/2001", Dev.df));
-		Dev dev2 = new Dev("Maria", LocalDate.parse("21/06/2000", Dev.df));
-		Dev dev3 = new Dev("Bianca", LocalDate.parse("05/05/2005", Dev.df));
+		Dev dev1 = new Dev("João", LocalDate.parse("15/02/2001", Dev.df), "joao@gmail.com");
+		Dev dev2 = new Dev("Maria", LocalDate.parse("21/06/2000", Dev.df), "maria@gmail.com");
+		Dev dev3 = new Dev("Bianca", LocalDate.parse("05/05/2005", Dev.df), "bianca@gmail.com");
 		
 		Registry registry1 = new Registry(LocalDate.now(), dev1, bootcamp);
 		Registry registry2 = new Registry(LocalDate.now(), dev2, bootcamp);
@@ -30,9 +31,8 @@ public class Program {
 		
 		dev1.getRegistry().updateProgress();
 		dev1.getRegistry().updateProgress();
-		dev1.getRegistry().updateProgress();
-		System.out.println(dev1.getRegistry().totalXP());
-		System.out.println(dev1.getRegistry().getCompletedContents());
+		
+		System.out.println(bootcamp.getRegistries().stream().map(r -> r.getDev().getName()).collect(Collectors.toSet()));
 
 	}
 

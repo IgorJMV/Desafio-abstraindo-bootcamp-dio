@@ -9,6 +9,7 @@ import lombok.EqualsAndHashCode.Include;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import web.dio.domain.exceptions.NonExistingRegistrationException;
 
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -22,13 +23,17 @@ public class Dev {
 	@Getter @Setter private String email;
 			@Setter(value = AccessLevel.PROTECTED) private Registry registry;
 	
-	public Dev(String name, LocalDate birthday) {
+	public Dev(String name, LocalDate birthday, String email) {
 		this.name = name;
 		this.birthday = birthday;
+		this.email = email;
 	}
 	
 	public Registry getRegistry() {
-		return registry;
+		if(registry != null)
+			return registry;
+		else
+			throw new NonExistingRegistrationException("O dev " + name + " não está matriculado em nenhum bootcamp.");
 	}
 	
 	@Override

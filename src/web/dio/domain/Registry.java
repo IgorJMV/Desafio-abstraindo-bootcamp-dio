@@ -33,7 +33,7 @@ public class Registry {
 		
 		dev.setRegistry(this);
 		bootcamp.getRegistries().add(this);
-		subscribedContents.addAll(bootcamp.getContens());
+		subscribedContents.addAll(bootcamp.getContents());
 	}
 	
 	public void setDev(Dev dev) {
@@ -44,7 +44,7 @@ public class Registry {
 	public void setBootcamp(Bootcamp bootcamp) {
 		bootcamp.getRegistries().add(this);
 		this.bootcamp = bootcamp;
-		subscribedContents.addAll(bootcamp.getContens());
+		subscribedContents.addAll(bootcamp.getContents());
 	}
 	
 	public void updateProgress() {

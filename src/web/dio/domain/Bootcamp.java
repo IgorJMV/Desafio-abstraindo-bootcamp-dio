@@ -21,7 +21,7 @@ public class Bootcamp {
 	@Getter @Setter private String description;
 	@Getter @Setter private LocalDate initialDate;
 	@Getter @Setter private LocalDate finalDate;
-	@Getter 		private Set<Content> contens = new LinkedHashSet<>();
+	@Getter 		private Set<Content> contents = new LinkedHashSet<>();
 	@Getter			private Set<Registry> registries = new LinkedHashSet<>();
 	
 	public Bootcamp(String name, String description, LocalDate initialDate, LocalDate finalDate) {
