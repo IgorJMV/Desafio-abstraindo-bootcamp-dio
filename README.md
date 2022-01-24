@@ -10,7 +10,7 @@ Esse sistema  possibilita a criação de cursos e a inserção desses cursos em 
 O sistema também permite analisar, por meio da matrícula, os cursos concluídos pelo dev e os que ainda faltam serem finalizados.
 
 ## Modelo conceitual
-![Modelo Conceitual](https://github.com/IgorJMV/Desafio-abstraindo-bootcamp-dio\tree\main\assets\domain.png)
+![Modelo Conceitual](https://github.com/IgorJMV/Desafio-abstraindo-bootcamp-dio/blob/main/assets/domain.png)
 
 # Tecnologias utilizadas
 - Java 17.0.2 2022-01-18 LTS
