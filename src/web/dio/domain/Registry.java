@@ -32,7 +32,7 @@ import lombok.Setter;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Registry {
 	
-	/** A constante df é usada na classe, ou fora dela, para formatação da datas
+	/** A constante df é usada na classe, ou fora dela, para formatação da data
 	 * {@link web.dio.domain.Registry#subscribeDate}. */
 	public static final DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
