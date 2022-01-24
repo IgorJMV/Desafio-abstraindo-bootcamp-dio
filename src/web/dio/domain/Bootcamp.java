@@ -11,9 +11,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Classe Bootcamp: responsável por modelar a entidade bootcamp,
+ * nessa classe pode ser armazenado todos os conteúdos ({@link Content}) necessários,
+ * sejam eles mentorias ({@link web.dio.domain.Mentoring}) ou cursos ({@link web.dio.domain.Course}).
+ * Os objetos dessa classe são comparados pelo atributo {@link web.dio.domain.Bootcamp#name}.
+ * 
+ * @author Igor Marinho
+ * @version 1.0.0
+ * @since Release 1.0.0
+ * @see Content
+ * @see Mentoring
+ * @see Course
+ * @see Registry
+ */
 @NoArgsConstructor
+
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Bootcamp {
+	
+	/** A constante df é usada na classe, ou fora dela, para formatação das datas
+	 * {@link #initialDate} e {@link #finalDate}.
+	 */
 	public static final DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
 	@Include
@@ -24,6 +43,14 @@ public class Bootcamp {
 	@Getter 		private Set<Content> contents = new LinkedHashSet<>();
 	@Getter			private Set<Registry> registries = new LinkedHashSet<>();
 	
+	/**
+	 * Usado para instanciar um bootcamp.
+	 *
+	 * @param name nome dado ao bootcamp
+	 * @param description descrição do bootcamp
+	 * @param initialDate data de inicio do bootcamp
+	 * @param finalDate data final para que o dev ({@link web.dio.domain.Dev}) conclua o bootcamp
+	 */
 	public Bootcamp(String name, String description, LocalDate initialDate, LocalDate finalDate) {
 		this.name = name;
 		this.description = description;
@@ -31,6 +58,11 @@ public class Bootcamp {
 		this.finalDate = finalDate;
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return uma string descrevendo as principais informações do bootcamp
+	 */
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();

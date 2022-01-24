@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"web.dio.domain","l":"Bootcamp"},{"p":"web.dio.domain","l":"Content"},{"p":"web.dio.domain","l":"Course"},{"p":"web.dio.domain","l":"Dev"},{"p":"web.dio.domain","l":"Mentoring"},{"p":"web.dio.domain","l":"Registry"}];updateSearchResults();
